@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  min-block-size: 100vh;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+  margin: 0;
+
+  &.is-active {
+    background-color: var(--blue-500);
+  }
+}
+
+.clickable {
+  user-select: none;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  background-color: var(--blue-900);
+  color: var(--blue-100);
+
+  &.is-active {
+    background-color: var(--blue-100);
+    color: var(--blue-800);
+  }
+}
+
+h1 {
+  --font-size: 48px;
+
+  font-weight: 900;
+  font-size: var(--font-size, 2.65rem);
+
+  &::before {
+    content: '🌈 '
+  }
+}
+
+#exorcist-characters {
+  list-style: none;
+  padding-inline-start: 0;
+
+  li {
+    padding: 4px;
+
+    &.charactor-is-active {
+      font-weight: 900;
+      color: var(--blue-700);
+    }
+  }
+}
+
+.box {
+  inline-size: 60%;
+  border: 4px solid var(--black);
+  padding: 20px;
+
+  &.box1 { background-color: #4b3cf4;}
+  &.box2 { background-color: #00e183;}
+  &.box3 { background-color: #e1005a;}
+}
