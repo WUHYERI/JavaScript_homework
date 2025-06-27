@@ -1,18 +1,26 @@
 # JavaScript_homework
+
 ## 자바스크립트 과제 저장소
+
 우혜리의 JavaScript 과제저장소 입니다!
-### 커밋 컨벤션 
+
+### 커밋 컨벤션
+
 ---
- 
+
 - [n주차 과제] : 과제 수행 내용
 - [n주차 회고] : 회고 내용
 - [DOCS] : README 등 문서작업
-- [ASSET] : 이미지 및 기타 리소스 추가  
+- [ASSET] : 이미지 및 기타 리소스 추가
+- [Feat] : 기능 추가, 변경
+
 <br>
 (필요 시 다른 태그 추가!)
 
 ### week 1
+
 ---
+
 - [01 변수, 상수 작성 과제](./week1/01-variables.js)
-- [02 함수 작성 과제](./week1/02-%20functions.js) 
+- [02 함수 작성 과제](./week1/02-%20functions.js)
 - [week 1 회고](./week1/week1_review.md)
