@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "live-server --host=localhost --port=3000"
+  },
+  "devDependencies": {
+    "live-server": "1.2.2",
+    "@eslint/js": "9.29.0",
+    "eslint": "9.29.0",
+    "globals": "16.2.0"
+  }
+}
