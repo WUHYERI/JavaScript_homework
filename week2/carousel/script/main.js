@@ -20,6 +20,7 @@ const SELECTED_CLASSNAME = 'is-selected';
 let currentIndex = 0;
 
 //다음 버튼 구현
+
 //인덱스 갱신 함수
 function updateCarousel(index) {
   contents.forEach((content) => {
@@ -62,6 +63,7 @@ nextButton.addEventListener('click', () => {
 
   //캐러셀 상태 업데이트
   updateCarousel(nextIndex);
+  settingTabindexControl();
 });
 
 //이전버튼
@@ -79,6 +81,7 @@ prevButton.addEventListener('click', () => {
   contentWrapper.style.setProperty('transform', 'translateX(-' + distance + ')');
 
   updateCarousel(prevIndex);
+  settingTabindexControl();
 });
 
 //페이지네이션 버튼
@@ -98,11 +101,12 @@ pagenations.forEach((pagenation) => {
     contentWrapper.style.setProperty('transform', 'translateX(-' + distance + ')');
 
     updateCarousel(selectedIndex);
+    settingTabindexControl();
   });
 });
 
 //접근성 향상
-//키보드로 접근 시 콘텐츠 컨테이너 선택 시 화살표 버튼 보이게
+//키보드로 접근 시 콘텐츠 컨테이너 포커스 상태일 때 화살표 버튼 계속 보이게
 
 //화면에 감춰진 콘텐츠는 키보드 초점 이동 안되게
 function settingTabindexControl() {
@@ -115,3 +119,30 @@ function settingTabindexControl() {
   }
 }
 settingTabindexControl();
+
+function moveContent(index) {
+  if (index < 0) {
+    index = contents.length - 1;
+  } else if (index > contents.length - 1) {
+    index = 0;
+  }
+
+  const distance = index * 100 + '%';
+  contentWrapper.style.setProperty('transform', 'translateX(-' + distance + ')');
+
+  updateCarousel(index);
+  settingTabindexControl();
+}
+
+//키보드 방향키로 슬라이드 이동
+carousel.addEventListener('keydown', (evt) => {
+  const currentIndex = getCurrentIndex();
+  //오른쪽 방향키 누르면 다음 버튼
+  if (evt.key === 'ArrowRight') {
+    moveContent(currentIndex + 1);
+  }
+  //왼쪽 방향키 누르면 이전 버튼
+  else if (evt.key === 'ArrowLeft') {
+    moveContent(currentIndex - 1);
+  }
+});

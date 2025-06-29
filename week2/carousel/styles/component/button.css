@@ -16,6 +16,7 @@ button {
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+  z-index: 999;
 
   width: 18.75rem;
   height: 3.125rem;
@@ -43,7 +44,7 @@ button {
     cursor: pointer;
     color: var(--color-gray);
     background-color: transparent;
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-s);
     font-weight: var(--font-weight-bold);
   }
 }

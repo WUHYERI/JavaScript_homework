@@ -1,10 +1,11 @@
 .carousel {
   position: relative;
+  overflow: hidden;
 
   .carousel__button {
     position: absolute;
     top: 50%;
-    z-index: 1;
+    z-index: 999;
     user-select: none;
     opacity: 0;
     pointer-events: none;
@@ -13,11 +14,11 @@
 
     &:first-of-type {
       left: 0px;
-      transform: translate(-40px, -50%);
+      transform: translate(-100px, -50%);
     }
     &:last-of-type {
       right: 0px;
-      transform: translate(40px, -50%);
+      transform: translate(100px, -50%);
     }
   }
 
@@ -28,12 +29,19 @@
   }
 
   /* 캐러셀 키보드로 접근 시 화살표 계속 보이게 */
-  &:focus-within {
-    .carousel__button {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translate(0, -50%);
-    }
+  &:focus-within::after {
+    content: '';
+    position: absolute;
+    display: block;
+    inset: 0;
+    border: 3px solid black;
+    z-index: 20;
+    /* background-color: blue; */
+  }
+  .carousel__button {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, -50%);
   }
 
   .carousel__container {
@@ -43,7 +51,7 @@
 
     .carousel__contents {
       display: flex;
-      height: 80vh;
+      height: 90vh;
 
       .carousel__content {
         position: relative;
@@ -84,8 +92,45 @@
   }
 
   .carousel__pagenations {
+    z-index: 999;
     & .is-selected {
       color: var(--gray-50);
     }
+  }
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .carousel__contents {
+    height: 70vh !important;
+    .carousel__content {
+      .content__inner {
+        width: 100%;
+        bottom: 50px;
+        left: var(--space-2) !important;
+        gap: 10px !important;
+
+        .content__title {
+          font-size: x-large !important;
+        }
+
+        .content__describe {
+          font-size: small !important;
+        }
+        .btn {
+          width: 93%;
+        }
+      }
+    }
+  }
+
+  .carousel__button {
+    display: none;
+  }
+
+  .carousel__pagenations {
+    justify-content: start;
+    font-size: var(--font-size-xs);
+    margin-left: var(--space-1);
   }
 }
