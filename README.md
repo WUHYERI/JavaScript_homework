@@ -26,3 +26,10 @@
 - [01 변수, 상수 작성 과제](./week1/01-variables.js)
 - [02 함수 작성 과제](./week1/02-%20functions.js)
 - [week 1 회고](./week1/week1_review.md)
+
+### week 2
+
+---
+
+- [week 3 과제 ](./week3/index.html)
+- [week 3 회고](./week3/week3_review.md)
