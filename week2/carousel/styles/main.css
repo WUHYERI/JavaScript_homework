@@ -1,0 +1,5 @@
+@import url(../../../assets/styles/common/_normalize.css);
+@import url(../../../assets/styles/common/_base.css);
+@import url(../../../assets/styles/common/_theme.css);
+@import url(../styles/component/carousel.css);
+@import url(../styles/component/button.css);
