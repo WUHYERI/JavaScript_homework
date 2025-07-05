@@ -1,4 +1,6 @@
-@layer theme, demo;
+@layer theme;
 
-@import "./modules/_theme.css" layer(theme);
-@import "./modules/_demo.css" layer(demo);
+@import './modules/_theme.css' layer(theme);
+@import './common/_base.css' layer(theme);
+@import './common/_normalize.css' layer(theme);
+@import './common/_theme.css' layer(theme);
