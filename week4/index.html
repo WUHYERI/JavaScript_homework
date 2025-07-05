@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/styles/main.css" />
     <link rel="stylesheet" href="./main.css" />
-    <script src="./main.js"></script>
+    <script src="./main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <title>움직이는 배너 만들기</title>
   </head>
@@ -18,7 +18,9 @@
           <img src="../assets/images/animation/cloud.svg" alt="구름" id="cloud-2"/ />
         </div>
         <div class="images__bottom">
-          <img src="../assets/images/animation/cat.svg" alt="고양이" id="cat" />
+          <div class="bottom__cat">
+            <img src="../assets/images/animation/cat.svg" alt="고양이" id="cat" />
+          </div>
           <img src="../assets/images/animation/ground.svg" alt="땅" id="ground" />
         </div>
       </div>
