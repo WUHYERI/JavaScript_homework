@@ -32,15 +32,48 @@ body {
       width: 100%;
       margin-bottom: 100px;
 
+      #sun:hover {
+        filter: brightness(0) saturate(100%) invert(16%) sepia(90%) saturate(2456%)
+          hue-rotate(-15deg);
+      }
+
       #cloud-1 {
         padding-top: 100px;
+        &:hover {
+          filter: brightness(0) saturate(100%) invert(23%) sepia(83%) saturate(2400%)
+            hue-rotate(190deg);
+        }
+      }
+
+      #cloud-2:hover {
+        filter: brightness(0) saturate(100%) invert(23%) sepia(83%) saturate(2400%)
+          hue-rotate(190deg);
       }
     }
+
     .images__bottom {
       /* background-color: orchid; */
       display: flex;
       flex-flow: column nowrap;
       align-items: end;
+
+      .bottom__cat {
+        position: relative;
+        display: block;
+
+        &:hover::after {
+          content: 'click!';
+          position: absolute;
+          top: -50px;
+          left: 50%;
+
+          transform: translateX(-50%);
+          font-size: 2rem;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+        }
+      }
+
       #ground {
         width: 50%;
       }
