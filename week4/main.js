@@ -54,3 +54,15 @@ const startAnimation = gsap.fromTo(
   { y: -300, stagger: 0.3 },
   { y: 0, stagger: 0.2, ease: 'power1.out', duration: 1 }
 );
+
+const textWrapper = document.querySelector('.banner__describe');
+console.log(textWrapper);
+const texts = textWrapper.querySelectorAll('p');
+
+console.log(texts);
+const textButton = textWrapper.querySelector('button');
+
+const tl = gsap.timeline();
+
+tl.fromTo(texts, { x: -500 }, { x: 0, duration: 1, ease: 'power1.out' }, '<');
+tl.fromTo(textButton, { x: -500 }, { x: 0, duration: 0.5, ease: 'power1.out' }, '+=0.3');
