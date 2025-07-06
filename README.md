@@ -27,9 +27,16 @@
 - [02 함수 작성 과제](./week1/02-%20functions.js)
 - [week 1 회고](./week1/week1_review.md)
 
-### week 2
+### week 3
 
 ---
 
 - [week 3 과제 ](./week3/index.html)
 - [week 3 회고](./week3/week3_review.md)
+
+### week 4
+
+---
+
+- [week 4 과제 ](./week4/index.html)
+- [week 4 회고](./week4/week4_review.md)
