@@ -68,6 +68,7 @@ const textWrapper = document.querySelector('.banner__describe');
 const texts = textWrapper.querySelectorAll('p');
 const downloadButton = textWrapper.querySelector('button');
 
+//이미지들 나타나는 애니메이션
 const tl = gsap.timeline();
 tl.fromTo(
   topImages,
@@ -77,3 +78,32 @@ tl.fromTo(
 tl.fromTo(texts, { x: -500 }, { x: 0, duration: 1, ease: 'power1.out' }, '<');
 tl.fromTo(downloadButton, { x: -500 }, { x: 0, duration: 2, ease: 'power1.out' }, '<');
 tl.fromTo([cat, ground], { x: 500 }, { x: 0, duration: 1, ease: 'power1.out' }, '<');
+
+//해,구름 색깔 칠해지는 애니메이션
+const tl2 = gsap.timeline({ repeat: -1 });
+tl2.to(
+  sun,
+  {
+    filter:
+      'brightness(0) saturate(100%) invert(16%) sepia(90%) saturate(2456%) hue-rotate(-15deg)',
+    duration: 0,
+  },
+  '+=1'
+);
+tl2.to(
+  [cloud01, cloud02],
+  {
+    filter:
+      'brightness(0) saturate(100%) invert(23%) sepia(83%) saturate(2400%) hue-rotate(190deg)',
+    stagger: 1,
+    duration: 0,
+  },
+  '+=1'
+);
+tl2.to(
+  topImages,
+  {
+    filter: 'none',
+  },
+  '+=1'
+);
