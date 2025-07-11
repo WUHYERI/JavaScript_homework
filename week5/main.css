@@ -10,6 +10,10 @@ button {
   background-color: transparent;
   font-size: 24px;
 }
+input {
+  border: none;
+  background-color: transparent;
+}
 
 .screen {
   width: 100%;
@@ -42,5 +46,73 @@ button {
     width: 100%;
     border-bottom: 1px solid black;
     padding-top: 0.3rem;
+  }
+}
+
+/* add plan input page */
+.add-plan-page {
+  &.is-open {
+    opacity: 1;
+    z-index: 10;
+  }
+  opacity: 0;
+  z-index: -1;
+
+  position: fixed;
+  top: 17%;
+  right: 10px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--blue-100);
+  padding: 15px;
+  border: 1px solid black;
+  width: 410px;
+  height: 600px;
+  gap: 2rem;
+
+  button {
+    padding: 0rem;
+  }
+  input {
+    border-bottom: 1.5px solid black;
+  }
+
+  .close-modal {
+    margin-left: auto;
+  }
+
+  .name-color {
+    display: inline-flex;
+    justify-content: space-between;
+
+    #userName {
+      width: 50%;
+    }
+    #userColor {
+      appearance: none;
+      border: none;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+    }
+  }
+
+  .add-all-to-do {
+    position: absolute;
+    bottom: 1rem;
+    width: 380px;
+    background-color: var(--white);
+    padding: 1rem;
+  }
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  label,
+  button {
+    white-space: nowrap;
   }
 }

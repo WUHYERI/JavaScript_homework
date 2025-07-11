@@ -11,6 +11,48 @@
     <div class="screen">
       <h1>to-do list</h1>
       <button type="button" class="add-plan">add your plan +</button>
+      <div class="add-plan-page is-open">
+        <button type="button" class="close-modal">닫기</button>
+        <div class="name-color">
+          <!-- 이름 -->
+          <div class="field">
+            <label for="userName">name</label>
+            <input type="text" id="userName" placeholder="홍길동" />
+          </div>
+          <!-- 색깔 -->
+          <div class="field">
+            <label for="userColor">color</label>
+            <input type="color" id="userColor" />
+          </div>
+        </div>
+        <form action="#">
+          <div class="field">
+            <!-- 시간 선택 선택박스 -->
+            <label for="hourSelect">hour</label>
+            <select name="selectedHour" id="hourSelect">
+              <!-- option js로 처리 -->
+            </select>
+            <!-- 분 선택 선택박스 -->
+            <label for="minuteSelect">minute</label>
+            <select name="selectedMinute" id="minuteSelect">
+              <!-- option js로 처리 -->
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="to-do">to-do</label>
+            <input type="text" id="to-do" placeholder="점심 처묵" />
+            <button type="button">추가!</button>
+          </div>
+        </form>
+
+        <!-- to-do list 추가될 곳 -->
+        <ul class="to-do">
+          <!-- to-do list 시간 순서대로 정렬 -->
+        </ul>
+
+        <button type="button" class="add-all-to-do">타임라인에 추가!</button>
+      </div>
       <ol class="time-line">
         <div class="user-name">name</div>
         <li class="01">01</li>
