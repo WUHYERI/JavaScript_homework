@@ -12,13 +12,13 @@
     <div class="main-page">
       <h1>to-do list</h1>
       <button type="button" class="add-plan">add your plan +</button>
-      <div class="add-plan-page">
+      <div class="add-plan-page is-open">
         <button type="button" class="close-modal">닫기</button>
         <div class="name-color">
           <!-- 이름 -->
           <div class="field">
             <label for="userName">name</label>
-            <input type="text" id="userName" placeholder="홍길동" />
+            <input type="text" id="userName" placeholder="e.g)홍길동" />
           </div>
           <!-- 색깔 -->
           <div class="field">
@@ -41,14 +41,14 @@
           </div>
 
           <div class="field">
-            <label for="to-do">to-do</label>
-            <input type="text" id="to-do" placeholder="점심 처묵" />
+            <label for="to-do-title">to-do</label>
+            <input type="text" id="to-do-title" placeholder="e.g)점심 처묵" />
             <button type="button" class="add-to-do">추가!</button>
           </div>
         </form>
 
         <!-- to-do list 추가될 곳 -->
-        <ul class="to-do">
+        <ul class="to-do-list">
           <!-- to-do list 시간 순서대로 정렬 -->
         </ul>
 
