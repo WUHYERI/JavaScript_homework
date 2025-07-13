@@ -9,7 +9,7 @@
     <script defer src="./main.js"></script>
   </head>
   <body>
-    <div class="screen">
+    <div class="main-page">
       <h1>to-do list</h1>
       <button type="button" class="add-plan">add your plan +</button>
       <div class="add-plan-page">
@@ -35,7 +35,7 @@
             </select>
             <!-- 분 선택 선택박스 -->
             <label for="minuteSelect">minute</label>
-            <select name="selectedMinute" id="minuteSelect">
+            <select name="selecteMinute" id="minuteSelect">
               <!-- option js로 처리 -->
             </select>
           </div>
@@ -43,7 +43,7 @@
           <div class="field">
             <label for="to-do">to-do</label>
             <input type="text" id="to-do" placeholder="점심 처묵" />
-            <button type="button">추가!</button>
+            <button type="button" class="add-to-do">추가!</button>
           </div>
         </form>
 
@@ -55,7 +55,9 @@
         <button type="button" class="add-all-to-do">타임라인에 추가!</button>
       </div>
       <ol class="time-line">
-        <div class="user-name">name</div>
+        <div class="user-name">
+          <button class="edit-to-do">name</button>
+        </div>
         <li class="01">01</li>
         <li class="02">02</li>
         <li class="03">03</li>
