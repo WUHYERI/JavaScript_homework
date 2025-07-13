@@ -134,7 +134,6 @@ function addToDoList() {
 function clearText() {
   toDoTitle.value = '';
 }
-
 const mainTimeLine = mainPage.querySelector('.time-line');
 const mainTimeLineLists = mainTimeLine.querySelectorAll('li');
 
@@ -148,4 +147,10 @@ function addAllLists() {
 
     targetList.append(title);
   }
+  clearList();
+}
+
+function clearList() {
+  toDoLists.innerHTML = '';
+  toDos.length = 0;
 }
