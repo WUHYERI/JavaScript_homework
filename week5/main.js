@@ -1,8 +1,5 @@
 //main time line page
 const mainPage = document.querySelector('.main-page');
-const mainTimeLine = mainPage.querySelector('.time-line');
-const mainTimeLineLists = mainTimeLine.querySelectorAll('li');
-const editToDoButton = mainTimeLine.querySelector('.edit-to-do');
 
 // add your plan modal
 const addPlanPage = mainPage.querySelector('.add-plan-page');
@@ -13,6 +10,8 @@ const toDoTitle = addPlanPage.querySelector('#to-do-title');
 const toDoLists = addPlanPage.querySelector('.to-do-list');
 const userName = addPlanPage.querySelector('#userName');
 const userColor = addPlanPage.querySelector('#userColor');
+
+const addAllListsButton = addPlanPage.querySelector('.add-all-to-do');
 
 //투두리스트들 배열
 const toDos = [];
@@ -28,7 +27,7 @@ openAddPlanButton.addEventListener('click', () => {
   loadHourMinuteOptions();
 });
 
-//to-do list 추가버튼
+//add tour plan 모달 안 버튼
 addPlanPage.addEventListener('click', (evt) => {
   console.log(evt.target);
   const target = evt.target;
@@ -44,6 +43,9 @@ addPlanPage.addEventListener('click', (evt) => {
       addToDoList();
 
       break;
+
+    case addAllListsButton:
+      addAllLists();
   }
 });
 
@@ -51,10 +53,9 @@ addPlanPage.addEventListener('click', (evt) => {
 // minute은 10분단위 시간은 01~24
 const hours = addPlanPage.querySelector('#hourSelect');
 const minutes = addPlanPage.querySelector('#minuteSelect');
-// const hourSection = addPlanPage.querySelector('');
 console.log(minutes);
 const loadHourMinuteOptions = () => {
-  for (let i = 0; i < 25; i++) {
+  for (let i = 1; i < 25; i++) {
     const option = document.createElement('option');
     option.textContent = i.toString().padStart(2, '0');
     hours.append(option);
@@ -132,4 +133,19 @@ function addToDoList() {
 
 function clearText() {
   toDoTitle.value = '';
+}
+
+const mainTimeLine = mainPage.querySelector('.time-line');
+const mainTimeLineLists = mainTimeLine.querySelectorAll('li');
+
+function addAllLists() {
+  //모든 투두 객체를 메인 타임라인 시간에 맞춰서 리스트에 추가
+  for (const todo of toDos) {
+    const todoTime = todo.hour;
+    const targetList = mainTimeLine.querySelector(`li.h${todoTime}`);
+    const title = document.createElement('span');
+    title.textContent = todo.text;
+
+    targetList.append(title);
+  }
 }
